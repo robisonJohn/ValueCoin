@@ -12,3 +12,13 @@ nav {
 h1 {
     margin: 20px;
 }
+.about-velocity {
+    font: Helvetica, sans-serif;
+    font-size: 20px;
+    border: 3px solid white;
+    margin: 5px;
+
+}
+p {
+    margin: 10px;
+}
