@@ -11,6 +11,11 @@ nav {
     flex-direction: row;
     
 }
+img {
+    height: 300px;
+    width: 500px;
+    align-items: center;
+}
 
 h1 {
     margin: 20px;
@@ -45,8 +50,13 @@ button {
     margin: 10px;
     font-family:Helvetica, sans-serif;
     font-weight: bold;
-    color: black;
+    
 }
 p {
-    margin: 10px;
+    margin: 20px;
+    font-size: 20px;
+    font-family: Helvetica, sans-serif;
+}
+.metric {
+    font-weight: bold;
 }
