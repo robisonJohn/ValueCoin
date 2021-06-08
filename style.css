@@ -1,0 +1,14 @@
+body {
+    background: linear-gradient(to right, rgb(150, 149, 179), rgb(35, 30, 67));
+}
+header {
+    display: flex;
+    justify-content:space-between;
+}
+nav {
+    margin: 30px;
+    
+}
+h1 {
+    margin: 20px;
+}
