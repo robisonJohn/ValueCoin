@@ -33,6 +33,7 @@ h1 {
 .column {
     flex: 50%;
     border: 3px solid white;
+    border-radius: 3%;
 }
 .about-velocity {
     font: 'Montserrat', sans-serif;
