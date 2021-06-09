@@ -19,6 +19,13 @@ img {
 
 h1 {
     margin: 20px;
+    background-color: darkslateblue;
+    border-radius: 14%;
+    padding: 30px;
+    color: white;
+    font:bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 60px;
 }
 .row {
     display: flex;

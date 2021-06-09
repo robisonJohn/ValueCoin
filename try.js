@@ -8,11 +8,10 @@ LUNAR CRUSH API
 const BASE_URL = 'https://api.lunarcrush.com/v2?data=assets&key=gwdbw0jz0hfr6fveqfmg2r&symbol=BTC';
 //console.log(sampleUrl);
 
+// Submission One
 const input = document.getElementById('input');
-console.log(input);
 const submit = document.getElementById('submit');
 const cryptoInfo = document.querySelector('.crypto-info');
-console.log(submit);
 
 const clearDiv = () => {
     while (cryptoInfo.childNodes.length) {
@@ -31,7 +30,7 @@ const searchLunarCrush = async (url) => {
         let response = await axios.get(url);
         
         const data = response.data;
-        // clearDiv();
+        clearDiv();
         processData(data);
     } catch (error) {
         console.error(error.message);
@@ -63,32 +62,59 @@ const processData = (sampleData) => {
     newAsset.appendChild(marketCap);
 
     const volume = document.createElement('p');
-    volume.innerHTML = `<strong>Transaction volume over the last 24 hours, in USD: </strong>$${coinData[0].volume_24h}`; // volume in USD for 24 hours up to this data point
+    volume.innerHTML = `<strong>Transaction volume over prior 24 hours, in USD: </strong>$${coinData[0].volume_24h}`; // volume in USD for 24 hours up to this data point
     newAsset.appendChild(volume);
 
     const velocity = document.createElement('p');
-    velocity.innerHTML = `<strong>The velocity of this crypto-currency is </strong>${
-        coinData[0].volume_24h * coinData[0].price / coinData[0].market_cap_global
+    velocity.innerHTML = `<strong>Velocity of crypto-currency: </strong>${
+        Math.floor(coinData[0].volume_24h * coinData[0].price / coinData[0].market_cap_global)
     }`
     newAsset.appendChild(velocity);
 
     const change24h = document.createElement('p');
     change24h.innerHTML = `<strong>Percent change in price over the last 24 hours: </strong> ${coinData[0].percent_change_24h}%`; // use to track recent changes
     newAsset.appendChild(change24h);
+    
+    const return24h = document.createElement('p');
+    return24h.innerHTML = `<strong>Expected return on investment over prior 24 hours: </strong> $${
+        Math.floor(coinData[0].percent_change_24h * coinData[0].price / 100)
+    }`; // use to track recent changes
+    newAsset.appendChild(return24h);
 
     const change7d = document.createElement('p');
-    change7d.innerHTML = `<strong> Percent change in price over the last seven days: </strong> ${coinData[0].percent_change_7d}%`;
+    change7d.innerHTML = `<strong> Percent change in price over prior 7 days: </strong> ${coinData[0].percent_change_7d}%`;
     newAsset.appendChild(change7d);
+
+    const return7d = document.createElement('p');
+    return7d.innerHTML = `<strong>Expected average return on investment over prior 7 days: </strong> $${
+        Math.floor(coinData[0].percent_change_7d * coinData[0].price / 700)
+    }`; // use to track recent changes
+    newAsset.appendChild(return7d);
 
     const change30d = document.createElement('p');
     change30d.innerHTML = `<strong> Percent change in price over the last 30 days: </strong> ${coinData[0].percent_change_30d}%`;
     newAsset.appendChild(change30d);
 
+    const return30d = document.createElement('p');
+    return30d.innerHTML = `<strong>Expected average return on investment the last 30 days: </strong> $${
+        Math.floor(coinData[0].percent_change_30d * coinData[0].price / 700)
+    }`; // use to track recent changes
+    newAsset.appendChild(return30d);
+
     cryptoInfo.appendChild(newAsset);
     //console.log();
 
+};
 
+// Submission 2
+const inputTwo = document.getElementById('input-2');
+const submitTwo = document.getElementById('submit-2');
+const cryptoInfoTwo = document.querySelector('.crypto-info-2');
 
+const clearDivTwo = () => {
+    while (cryptoInfoTwo.childNodes.length) {
+        cryptoInfoTwo.childNodes[0].remove();
+    }
 };
 
 
