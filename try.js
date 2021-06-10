@@ -45,7 +45,20 @@ const searchLunarCrush = async (url) => {
 const processData = (sampleData) => {
     const coinData = sampleData.data;
     //console.log(coinData);
-    console.log(coinData[0].timeSeries)
+    const timeSeries = coinData[0].timeSeries;
+    // metrics we need to calculate: mean
+    // console.log(timeSeries[0].close);
+    let meanPrice = 0;
+    for (let i = 0; i < timeSeries.length; i++) {
+        meanPrice = meanPrice + timeSeries[i].close;
+    }
+    meanPrice = meanPrice / timeSeries.length;
+    //console.log(meanPrice);
+
+    console.log(timeSeries);
+    
+   
+    
     
     const newAsset = document.createElement('div');
     newAsset.className = 'new-asset';
