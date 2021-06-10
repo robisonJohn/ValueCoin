@@ -10,7 +10,9 @@ LUNAR CRUSH API
 const BASE_URL = 'https://api.lunarcrush.com/v2?data=assets&key=gwdbw0jz0hfr6fveqfmg2r';
 
 // Submission One
-const input = document.getElementById('input');
+const symbol = document.getElementById('input');
+const time = document.getElementById('time');
+const dataPoints = document.getElementById('data');
 const submit = document.getElementById('submit');
 const cryptoInfo = document.querySelector('.crypto-info');
 
@@ -22,7 +24,7 @@ const clearDiv = () => {
 
 submit.addEventListener("click", () => {
 
-    const sampleUrl = `${BASE_URL}&symbol=${input.value}`;
+    const sampleUrl = `${BASE_URL}&symbol=${symbol.value}&data_points=${dataPoints.value}&interval=${time.value}`;
     searchLunarCrush(sampleUrl);
 
 });
@@ -42,7 +44,8 @@ const searchLunarCrush = async (url) => {
 
 const processData = (sampleData) => {
     const coinData = sampleData.data;
-    console.log(coinData);
+    //console.log(coinData);
+    console.log(coinData[0].timeSeries)
     
     const newAsset = document.createElement('div');
     newAsset.className = 'new-asset';
@@ -103,13 +106,17 @@ const processData = (sampleData) => {
     }`; // use to track recent changes
     newAsset.appendChild(return30d);
 
+
+
     cryptoInfo.appendChild(newAsset);
     //console.log();
 
 };
 
 // Submission 2
-const inputTwo = document.getElementById('input-2');
+const symbolTwo = document.getElementById('input-2');
+const timeTwo = document.getElementById('time-2');
+const dataPointsTwo = document.getElementById('data-2');
 const submitTwo = document.getElementById('submit-2');
 const cryptoInfoTwo = document.querySelector('.crypto-info-2');
 
@@ -119,7 +126,7 @@ const clearDivTwo = () => {
     }
 };
 submitTwo.addEventListener("click", () => {
-    const sampleUrlTwo = `${BASE_URL}&symbol=${inputTwo.value}`;
+    const sampleUrlTwo = `${BASE_URL}&symbol=${symbolTwo.value}&data_points=${dataPointsTwo.value}&interval=${timeTwo.value}`;
     searchLunarCrushTwo(sampleUrlTwo);
 
 });
