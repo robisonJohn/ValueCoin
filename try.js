@@ -44,22 +44,21 @@ const searchLunarCrush = async (url) => {
 
 const processData = (sampleData) => {
     const coinData = sampleData.data;
-    //console.log(coinData);
     const timeSeries = coinData[0].timeSeries;
-    // metrics we need to calculate: mean
-    // console.log(timeSeries[0].close);
+
     let meanPrice = 0;
     for (let i = 0; i < timeSeries.length; i++) {
         meanPrice = meanPrice + timeSeries[i].close;
     }
     meanPrice = meanPrice / timeSeries.length;
-    //console.log(meanPrice);
+    console.log(meanPrice);
 
-    console.log(timeSeries);
-    
-   
-    
-    
+    let earnings = timeSeries[timeSeries.length - 1].close - timeSeries[0].close;
+
+    let peRatio = meanPrice / earnings;
+
+    /* CORE ASSET VALUES */
+    // note: we will round all values to four sig figs
     const newAsset = document.createElement('div');
     newAsset.className = 'new-asset';
 
@@ -72,52 +71,51 @@ const processData = (sampleData) => {
     newAsset.appendChild(symbol);
 
     const price = document.createElement('p');
-    price.innerHTML = `<strong>Current asset price: </strong>$${coinData[0].price}`;
+    price.innerHTML = `<strong>Current asset price: </strong>$${(coinData[0].price).toPrecision(3)}`;
     newAsset.appendChild(price);
 
-    const marketCap = document.createElement('p');
-    marketCap.innerHTML = `<strong>Current asset market capitalization, in USD: </strong>$${coinData[0].market_cap_global}`;
-    newAsset.appendChild(marketCap);
-
-    const volume = document.createElement('p');
-    volume.innerHTML = `<strong>Transaction volume over prior 24 hours, in USD: </strong>$${coinData[0].volume_24h}`; // volume in USD for 24 hours up to this data point
-    newAsset.appendChild(volume);
+    /* VELOCITY AND ITS CHILD VARIABLES */
 
     const velocity = document.createElement('p');
     velocity.innerHTML = `<strong>Velocity of crypto-currency: </strong>${
-        (coinData[0].volume_24h * coinData[0].price / coinData[0].market_cap_global)
+        (coinData[0].volume_24h * coinData[0].price / coinData[0].market_cap_global).toPrecision(3)
     }`
     newAsset.appendChild(velocity);
 
-    const change24h = document.createElement('p');
-    change24h.innerHTML = `<strong>Percent change in price over the last 24 hours: </strong> ${coinData[0].percent_change_24h}%`; // use to track recent changes
-    newAsset.appendChild(change24h);
+    const velocityChildren = document.createElement('ul');
+
+    const marketCap = document.createElement('li');
+    marketCap.innerHTML = `<strong>Current asset market capitalization, in USD: </strong>$${(coinData[0].market_cap_global).toPrecision(3)}`;
+    velocityChildren.appendChild(marketCap);
+
+    const volume = document.createElement('li');
+    volume.innerHTML = `<strong>Transaction volume over prior 24 hours, in USD: </strong>$${(coinData[0].volume_24h).toPrecision(3)}`; // volume in USD for 24 hours up to this data point
+    velocityChildren.appendChild(volume);
+
+    newAsset.appendChild(velocityChildren);
+
+    /* PRICE TO EARNINGS VARIABLE AND ITS CHILD VARIABLES*/
+
+    let pe = document.createElement('p');
+    pe.innerHTML = `<strong>Price to Earnings Ratio: </strong>${peRatio.toPrecision(3)}`;
+    newAsset.appendChild(pe);
+
+    let peChildren = document.createElement('ul');
+
+    const mean = document.createElement('li');
+    mean.innerHTML = `<strong>Mean Price </strong>: $${meanPrice.toPrecision(3)}`;
+    peChildren.appendChild(mean);
+
+    const averageEarnings = document.createElement('li');
+    averageEarnings.innerHTML = `<strong>Mean Earnings: </strong> ${earnings.toPrecision(3)}`;
+    peChildren.appendChild(averageEarnings);
+
+    const percentEarned = document.createElement('li');
+    percentEarned.innerHTML = `<strong>Percent Earned:</strong> ${(100 * earnings / timeSeries[timeSeries.length - 1].close).toPrecision(3)}%`;
+    peChildren.appendChild(percentEarned);
+
     
-    const return24h = document.createElement('p');
-    return24h.innerHTML = `<strong>Expected return on investment over prior 24 hours: </strong> $${
-        Math.floor(coinData[0].percent_change_24h * coinData[0].price / 100)
-    }`; // use to track recent changes
-    newAsset.appendChild(return24h);
-
-    const change7d = document.createElement('p');
-    change7d.innerHTML = `<strong> Percent change in price over prior 7 days: </strong> ${coinData[0].percent_change_7d}%`;
-    newAsset.appendChild(change7d);
-
-    const return7d = document.createElement('p');
-    return7d.innerHTML = `<strong>Expected average return on investment over prior 7 days: </strong> $${
-        Math.floor(coinData[0].percent_change_7d * coinData[0].price / 700)
-    }`; // use to track recent changes
-    newAsset.appendChild(return7d);
-
-    const change30d = document.createElement('p');
-    change30d.innerHTML = `<strong> Percent change in price over the last 30 days: </strong> ${coinData[0].percent_change_30d}%`;
-    newAsset.appendChild(change30d);
-
-    const return30d = document.createElement('p');
-    return30d.innerHTML = `<strong>Expected average return on investment the last 30 days: </strong> $${
-        Math.floor(coinData[0].percent_change_30d * coinData[0].price / 700)
-    }`; // use to track recent changes
-    newAsset.appendChild(return30d);
+    newAsset.appendChild(peChildren);
 
 
 

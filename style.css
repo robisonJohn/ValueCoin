@@ -120,3 +120,7 @@ p, label {
     text-decoration: underline;
     font-weight: bold;
 }
+
+li {
+    margin: 20px;
+}
