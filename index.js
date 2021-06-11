@@ -1,12 +1,8 @@
 /*
 LUNAR CRUSH API
+
+The goal for this API is to serve a similar role to the prior page, except this time our goal is to pull social data.
 */
-// so how should we proceed?
-// first, fetch the data from the url. 
-// second, convert the useful data into variables.
-// third, assign these variable values to components of the HTML document.
-// const BASE_URL = 'https://api.lunarcrush.com/v2?data=assets&key=gwdbw0jz0hfr6fveqfmg2r&symbol=BTC';
-//console.log(sampleUrl);
 const BASE_URL = 'https://api.lunarcrush.com/v2?data=assets&key=gwdbw0jz0hfr6fveqfmg2r';
 
 // Submission One
@@ -45,151 +41,35 @@ const searchLunarCrush = async (url) => {
 const processData = (sampleData) => {
     const coinData = sampleData.data;
     const timeSeries = coinData[0].timeSeries;
+    console.log(timeSeries);
 
-    let meanPrice = 0;
-    for (let i = 0; i < timeSeries.length; i++) {
-        meanPrice = meanPrice + timeSeries[i].close;
-    }
-    meanPrice = meanPrice / timeSeries.length;
-    //console.log(meanPrice);
-
-    let earnings = timeSeries[timeSeries.length - 1].close - timeSeries[0].close;
-
-    let peRatio = meanPrice / earnings;
-
-    let volatility = 0;
-    for (let i = 0; i < timeSeries.length; i++) {
-        volatility = volatility + Math.pow((meanPrice - timeSeries[i].close), 2);
-    }
-    console.log(`The volatility is ${volatility}`);
-    let variance = Math.sqrt(volatility);
-    console.log(`The variance is ${variance}`);
-    variance = variance / timeSeries.length;
-    console.log(`The variance is ${variance}`);
-    console.log(timeSeries.length)
-    
-    //console.log(variance);
-
-    let downside = 0;
-    let counter = 0;
-    for (let i = 0; i < timeSeries.length; i++) {
-        if (meanPrice - timeSeries[i].close > 0) {
-            downside = downside + Math.pow((meanPrice - timeSeries[i].close),2);
-            counter = counter + 1;
-        }
-    }
-    console.log(`The counter is at ${counter}`);
-    console.log(`The downside is ${downside}`);
-    let downsideRisk = Math.sqrt(downside);
-    console.log(`The downside risk is ${downsideRisk}`);
-    downsideRisk = downsideRisk / counter;
-    console.log(`The downside risk is ${downsideRisk}`);
-    //console.log(downsideRisk);
-
-    let upside = 0;
-    let counterUp = 0;
-    for (let i = 0; i < timeSeries.length; i++) {
-        if (meanPrice - timeSeries[i].close < 0) {
-            upside = upside + Math.pow((meanPrice - timeSeries[i].close),2);
-            counterUp = counterUp + 1;
-        }
-    }
-    console.log(`The upside is ${upside}`);
-    let upsideRisk = Math.sqrt(upside);
-    console.log(`The upside risk is ${upsideRisk}`)
-    upsideRisk = upsideRisk / counterUp;
-    console.log(`The upside risk is ${upsideRisk}`)
-    console.log(`counterUp is ${counterUp}`);
-    //console.log(upsideRisk);
-
-    const riskDifferential = upsideRisk - downsideRisk;
-    console.log(riskDifferential);
-
-    /* CORE ASSET VALUES */
-    // note: we will round all values to four sig figs
     const newAsset = document.createElement('div');
     newAsset.className = 'new-asset';
 
-    const name = document.createElement('p');
-    name.innerHTML = `<strong>Asset name: </strong>${coinData[0].name}`;
-    newAsset.appendChild(name);
+    const volume = document.createElement('p');
+    volume.innerHTML = `<strong>Volume of Social Media Posts: </strong>`;
+    newAsset.appendChild(volume);
 
-    const symbol = document.createElement('p');
-    symbol.innerHTML = `<strong>Asset symbol: </strong>${coinData[0].symbol}`;
-    newAsset.appendChild(symbol);
+    const volumeChildren = document.createElement('ul');
 
-    const price = document.createElement('p');
-    price.innerHTML = `<strong>Current asset price: </strong>$${(coinData[0].price).toPrecision(3)}`;
-    newAsset.appendChild(price);
+    const sentiment = document.createElement('p');
+    sentiment.innerHTML = `<strong>Average Sentiment: </strong>`;
+    newAsset.appendChild(sentiment);
 
-    /* VELOCITY AND ITS CHILD VARIABLES */
+    const sentimentChildren = document.createElement('ul');
 
-    const velocity = document.createElement('p');
-    velocity.innerHTML = `<strong>Velocity: </strong>${
-        (coinData[0].volume_24h * coinData[0].price / coinData[0].market_cap_global).toPrecision(3)
-    }`
-    newAsset.appendChild(velocity);
-
-    const velocityChildren = document.createElement('ul');
-
-    const marketCap = document.createElement('li');
-    marketCap.innerHTML = `<strong>Current asset market capitalization, in USD: </strong>$${(coinData[0].market_cap_global).toPrecision(3)}`;
-    velocityChildren.appendChild(marketCap);
-
-    const volume = document.createElement('li');
-    volume.innerHTML = `<strong>Transaction volume over prior 24 hours, in USD: </strong>$${(coinData[0].volume_24h).toPrecision(3)}`; // volume in USD for 24 hours up to this data point
-    velocityChildren.appendChild(volume);
-
-    newAsset.appendChild(velocityChildren);
-
-    /* PRICE TO EARNINGS VARIABLE AND ITS CHILD VARIABLES*/
-    // five sub-metrics: mean price, mean earnings, percent earned, high, low
-
-    let pe = document.createElement('p');
-    pe.innerHTML = `<strong>Price to Earnings Ratio: </strong>${peRatio.toPrecision(3)}`;
-    newAsset.appendChild(pe);
-
-    let peChildren = document.createElement('ul');
-
-    const mean = document.createElement('li');
-    mean.innerHTML = `<strong>Mean Price </strong>: $${meanPrice.toPrecision(3)}`;
-    peChildren.appendChild(mean);
-
-    const averageEarnings = document.createElement('li');
-    averageEarnings.innerHTML = `<strong>Mean Earnings: </strong> ${earnings.toPrecision(3)}`;
-    peChildren.appendChild(averageEarnings);
-
-    const percentEarned = document.createElement('li');
-    percentEarned.innerHTML = `<strong>Percent Earned:</strong> ${(100 * earnings / timeSeries[timeSeries.length - 1].close).toPrecision(3)}%`;
-    peChildren.appendChild(percentEarned);
-
-    newAsset.appendChild(peChildren);
-
-    /*
-    RISK DIFFERENTIAL AND ITS CHILDREN COMPONENTS
-    */
-   const riskDifferentialTag = document.createElement('p');
-   riskDifferentialTag.innerHTML = `<strong>Risk differential: </strong>${riskDifferential}`;
-   newAsset.appendChild(riskDifferentialTag);
-
-   const riskTagList = document.createElement('ul');
-
-   const varianceTag = document.createElement('li');
-   varianceTag.innerHTML = `Variance: ${variance}`;
-   riskTagList.appendChild(varianceTag);
-
-   const downsideTag = document.createElement('li');
-   downsideTag.innerHTML = `Downside Risk: ${downsideRisk}`;
-   riskTagList.appendChild(downsideTag);
-
-   const upsideTag = document.createElement('li');
-   upsideTag.innerHTML = `Upside Risk: ${upsideRisk}`;
-   riskTagList.appendChild(upsideTag);
-
-   newAsset.appendChild(riskTagList);
+    const correlation = document.createElement('p');
+    correlation.innerHTML = `<strong>Correlation between Social Media and Asset Price / Volume: </strong>`;
+    newAsset.appendChild(correlation);
+    const correlationChildren = document.createElement('ul');
 
     cryptoInfo.appendChild(newAsset);
-    //console.log();
+
+
+
+
+
+    
 
 };
 
@@ -228,150 +108,7 @@ const processDataTwo = (sampleData) => {
     const coinData = sampleData.data;
     const timeSeries = coinData[0].timeSeries;
 
-    let meanPrice = 0;
-    for (let i = 0; i < timeSeries.length; i++) {
-        meanPrice = meanPrice + timeSeries[i].close;
-    }
-    meanPrice = meanPrice / timeSeries.length;
-    //console.log(meanPrice);
-
-    let earnings = timeSeries[timeSeries.length - 1].close - timeSeries[0].close;
-
-    let peRatio = meanPrice / earnings;
-
-    let volatility = 0;
-    for (let i = 0; i < timeSeries.length; i++) {
-        volatility = volatility + Math.pow((meanPrice - timeSeries[i].close), 2);
-    }
-    console.log(`The volatility is ${volatility}`);
-    let variance = Math.sqrt(volatility);
-    console.log(`The variance is ${variance}`);
-    variance = variance / timeSeries.length;
-    console.log(`The variance is ${variance}`);
-    console.log(timeSeries.length)
     
-    //console.log(variance);
-
-    let downside = 0;
-    let counter = 0;
-    for (let i = 0; i < timeSeries.length; i++) {
-        if (meanPrice - timeSeries[i].close > 0) {
-            downside = downside + Math.pow((meanPrice - timeSeries[i].close),2);
-            counter = counter + 1;
-        }
-    }
-    console.log(`The counter is at ${counter}`);
-    console.log(`The downside is ${downside}`);
-    let downsideRisk = Math.sqrt(downside);
-    console.log(`The downside risk is ${downsideRisk}`);
-    downsideRisk = downsideRisk / counter;
-    console.log(`The downside risk is ${downsideRisk}`);
-    //console.log(downsideRisk);
-
-    let upside = 0;
-    let counterUp = 0;
-    for (let i = 0; i < timeSeries.length; i++) {
-        if (meanPrice - timeSeries[i].close < 0) {
-            upside = upside + Math.pow((meanPrice - timeSeries[i].close),2);
-            counterUp = counterUp + 1;
-        }
-    }
-    console.log(`The upside is ${upside}`);
-    let upsideRisk = Math.sqrt(upside);
-    console.log(`The upside risk is ${upsideRisk}`)
-    upsideRisk = upsideRisk / counterUp;
-    console.log(`The upside risk is ${upsideRisk}`)
-    console.log(`counterUp is ${counterUp}`);
-    //console.log(upsideRisk);
-
-    const riskDifferential = upsideRisk - downsideRisk;
-    console.log(riskDifferential);
-
-    /* CORE ASSET VALUES */
-    // note: we will round all values to four sig figs
-    const newAssetTwo = document.createElement('div');
-    newAssetTwo.className = 'new-asset-2';
-
-    const name = document.createElement('p');
-    name.innerHTML = `<strong>Asset name: </strong>${coinData[0].name}`;
-    newAssetTwo.appendChild(name);
-
-    const symbol = document.createElement('p');
-    symbol.innerHTML = `<strong>Asset symbol: </strong>${coinData[0].symbol}`;
-    newAssetTwo.appendChild(symbol);
-
-    const price = document.createElement('p');
-    price.innerHTML = `<strong>Current asset price: </strong>$${(coinData[0].price).toPrecision(3)}`;
-    newAssetTwo.appendChild(price);
-
-    /* VELOCITY AND ITS CHILD VARIABLES */
-
-    const velocity = document.createElement('p');
-    velocity.innerHTML = `<strong>Velocity: </strong>${
-        (coinData[0].volume_24h * coinData[0].price / coinData[0].market_cap_global).toPrecision(3)
-    }`
-    newAssetTwo.appendChild(velocity);
-
-    const velocityChildren = document.createElement('ul');
-
-    const marketCap = document.createElement('li');
-    marketCap.innerHTML = `<strong>Current asset market capitalization, in USD: </strong>$${(coinData[0].market_cap_global).toPrecision(3)}`;
-    velocityChildren.appendChild(marketCap);
-
-    const volume = document.createElement('li');
-    volume.innerHTML = `<strong>Transaction volume over prior 24 hours, in USD: </strong>$${(coinData[0].volume_24h).toPrecision(3)}`; // volume in USD for 24 hours up to this data point
-    velocityChildren.appendChild(volume);
-
-    newAssetTwo.appendChild(velocityChildren);
-
-    /* PRICE TO EARNINGS VARIABLE AND ITS CHILD VARIABLES*/
-    // five sub-metrics: mean price, mean earnings, percent earned, high, low
-
-    let pe = document.createElement('p');
-    pe.innerHTML = `<strong>Price to Earnings Ratio: </strong>${peRatio.toPrecision(3)}`;
-    newAssetTwo.appendChild(pe);
-
-    let peChildren = document.createElement('ul');
-
-    const mean = document.createElement('li');
-    mean.innerHTML = `<strong>Mean Price </strong>: $${meanPrice.toPrecision(3)}`;
-    peChildren.appendChild(mean);
-
-    const averageEarnings = document.createElement('li');
-    averageEarnings.innerHTML = `<strong>Mean Earnings: </strong> ${earnings.toPrecision(3)}`;
-    peChildren.appendChild(averageEarnings);
-
-    const percentEarned = document.createElement('li');
-    percentEarned.innerHTML = `<strong>Percent Earned:</strong> ${(100 * earnings / timeSeries[timeSeries.length - 1].close).toPrecision(3)}%`;
-    peChildren.appendChild(percentEarned);
-
-    newAssetTwo.appendChild(peChildren);
-
-    /*
-    RISK DIFFERENTIAL AND ITS CHILDREN COMPONENTS
-    */
-   const riskDifferentialTag = document.createElement('p');
-   riskDifferentialTag.innerHTML = `<strong>Risk differential: </strong>${riskDifferential}`;
-   newAssetTwo.appendChild(riskDifferentialTag);
-
-   const riskTagList = document.createElement('ul');
-
-   const varianceTag = document.createElement('li');
-   varianceTag.innerHTML = `Variance: ${variance}`;
-   riskTagList.appendChild(varianceTag);
-
-   const downsideTag = document.createElement('li');
-   downsideTag.innerHTML = `Downside Risk: ${downsideRisk}`;
-   riskTagList.appendChild(downsideTag);
-
-   const upsideTag = document.createElement('li');
-   upsideTag.innerHTML = `Upside Risk: ${upsideRisk}`;
-   riskTagList.appendChild(upsideTag);
-
-   newAssetTwo.appendChild(riskTagList);
-
-    cryptoInfoTwo.appendChild(newAssetTwo);
-    //console.log();
 
 };
 
