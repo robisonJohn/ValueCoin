@@ -49,23 +49,62 @@ img {
 }
 .column {
     flex: 50%;
-    border: 3px solid white;
+    border: 3px solid pink;
     border-radius: 3%;
 }
+
+/*
+Below is the styling section for the about page
+*/
+main {
+    display: flex;
+    justify-content:space-around;
+    flex-direction: row;
+}
+
 .about-velocity {
-    font: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 20px;
-    border: 3px solid white;
-    margin: 5px;
-
+    margin: 30px;
+    border: 5px solid orangered;
+    border-radius: 20%;
+    background-color:lightcoral;
+    height: 650px;
+    width: 600px;
 }
+.about-velocity > h3 {
+    text-align: center;
+    font-size: 35px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: crimson;
+}
+.about-velocity > p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+    color: black;
+}
+
 .about-me {
-    font: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 20px;
-    border: 3px solid white;
-    margin: 5px;
-
+    margin: 30px;
+    border: 5px solid hotpink;
+    border-radius: 20%;
+    background-color: lightblue;
+    height: 650px;
+    width: 600px;
 }
+.about-me > p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+    color: black;
+}
+.about-me > h3 {
+    text-align: center;
+    font-size: 35px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: hotpink;
+}
+
+/*
+This is the end of styling for the about section
+*/
 
 button {
     text-transform: uppercase;
