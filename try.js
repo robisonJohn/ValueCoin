@@ -169,21 +169,21 @@ const processData = (sampleData) => {
     RISK DIFFERENTIAL AND ITS CHILDREN COMPONENTS
     */
    const riskDifferentialTag = document.createElement('p');
-   riskDifferentialTag.innerHTML = `<strong>Risk differential: </strong>${riskDifferential}`;
+   riskDifferentialTag.innerHTML = `<strong>Risk differential: </strong>${riskDifferential.toPrecision(3)}`;
    newAsset.appendChild(riskDifferentialTag);
 
    const riskTagList = document.createElement('ul');
 
    const varianceTag = document.createElement('li');
-   varianceTag.innerHTML = `Variance: ${variance}`;
+   varianceTag.innerHTML = `<strong>Variance: </strong>${variance.toPrecision(3)}`;
    riskTagList.appendChild(varianceTag);
 
    const downsideTag = document.createElement('li');
-   downsideTag.innerHTML = `Downside Risk: ${downsideRisk}`;
+   downsideTag.innerHTML = `<strong>Downside Risk: </strong>${downsideRisk.toPrecision(3)}`;
    riskTagList.appendChild(downsideTag);
 
    const upsideTag = document.createElement('li');
-   upsideTag.innerHTML = `Upside Risk: ${upsideRisk}`;
+   upsideTag.innerHTML = `<strong>Upside Risk: </strong>${upsideRisk.toPrecision(3)}`;
    riskTagList.appendChild(upsideTag);
 
    newAsset.appendChild(riskTagList);
@@ -351,21 +351,21 @@ const processDataTwo = (sampleData) => {
     RISK DIFFERENTIAL AND ITS CHILDREN COMPONENTS
     */
    const riskDifferentialTag = document.createElement('p');
-   riskDifferentialTag.innerHTML = `<strong>Risk differential: </strong>${riskDifferential}`;
+   riskDifferentialTag.innerHTML = `<strong>Risk differential: </strong>${riskDifferential.toPrecision(3)}`;
    newAssetTwo.appendChild(riskDifferentialTag);
 
    const riskTagList = document.createElement('ul');
 
    const varianceTag = document.createElement('li');
-   varianceTag.innerHTML = `Variance: ${variance}`;
+   varianceTag.innerHTML = `<strong>Variance: </strong>${variance.toPrecision(3)}`;
    riskTagList.appendChild(varianceTag);
 
    const downsideTag = document.createElement('li');
-   downsideTag.innerHTML = `Downside Risk: ${downsideRisk}`;
+   downsideTag.innerHTML = `<strong>Downside Risk: </strong>${downsideRisk.toPrecision(3)}`;
    riskTagList.appendChild(downsideTag);
 
    const upsideTag = document.createElement('li');
-   upsideTag.innerHTML = `Upside Risk: ${upsideRisk}`;
+   upsideTag.innerHTML = `<strong>Upside Risk: </strong>${upsideRisk.toPrecision(3)}`;
    riskTagList.appendChild(upsideTag);
 
    newAssetTwo.appendChild(riskTagList);

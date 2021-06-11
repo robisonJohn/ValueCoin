@@ -243,7 +243,7 @@ const processData = (sampleData) => {
     socialDominance = socialDominance / timeSeries.length;
 
     const galaxy = document.createElement('p');
-    galaxy.innerHTML = `<strong>Galaxy Score: </strong>`;
+    galaxy.innerHTML = `<strong>Galaxy Score: </strong> ${galaxyScore}`;
     newAsset.appendChild(galaxy);
 
     const correlationChildren = document.createElement('ul');
