@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(to right, rgb(160, 159, 189), rgb(89, 80, 148));
+    background: linear-gradient(120deg, rgb(160, 159, 189), rgb(89, 80, 148));
 }
 header {
     display: flex;
@@ -17,21 +17,10 @@ img {
     align-items: center;
 }
 
-.home-button {
-    margin: 20px;
-    background-color: darkslateblue;
-    border-radius: 14%;
-    padding: 30px;
-    color: white;
-    font:bold;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 60px;
-    height: 150px;
-    width: 350px;
-}
+
 .home-header {
     text-align: center;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family:'Baloo Tammudu 2', cursive;
     font-weight:900;
 }
 .home-nav {
@@ -56,7 +45,7 @@ img {
 /*
 Below is the styling section for the about page
 */
-main {
+.about-page {
     display: flex;
     justify-content:space-around;
     flex-direction: row;
@@ -109,19 +98,23 @@ This is the end of styling for the about section
 button {
     text-transform: uppercase;
     border: 1px solid black;
-    border-radius: 14%;
-    width: 100px;;
-    height: 50px;
-    background-color: lightblue;
+    border-radius: 60%;
+    border: 3px solid white;
+    color:hotpink;
+    width: 120px;;
+    height: 120px;
+    background-color: turquoise;
     font-size: 20px;
     margin: 10px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family:'Baloo Tammudu 2', cursive;;
     font-weight: bold;
     
 }
+
+
 .nav-button {
-    width: 250px;
-    height: 75px;
+    width: 200px;
+    height: 120px;
 }
 
 input {
@@ -162,4 +155,22 @@ p, label {
 
 li {
     margin: 20px;
+}
+
+/*
+STYLING THE HOME BUTTON
+*/
+
+.home-button {
+    margin: 20px;
+    background-color: darkslateblue;
+    border: 3px solid crimson;
+    border-radius: 14%;
+    padding: 30px;
+    color: palevioletred;
+    font:bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 60px;
+    height: 150px;
+    width: 350px;
 }
