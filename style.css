@@ -50,6 +50,13 @@ p, li {
     
 }
 
+@media screen and (max-width: 1024) {
+    .search-section {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 
 
 /*
@@ -59,16 +66,26 @@ Below is the styling section for the about page
     display: flex;
     justify-content:space-around;
     flex-direction: row;
+    
+}
+
+@media  screen and (max-width: 1024) {
+    .about-page {
+        display: flex;
+        flex-direction: column;
+    }
+    
 }
 
 .about-velocity {
     margin: 30px;
     border: 5px solid orangered;
-    border-radius: 20%;
+    border-radius: 5%;
     background-color:lightcoral;
-    height: 650px;
-    width: 600px;
+    width: 40%;
 }
+
+
 .about-velocity > h3 {
     text-align: center;
     font-size: 35px;
@@ -84,10 +101,11 @@ Below is the styling section for the about page
 .about-me {
     margin: 30px;
     border: 5px solid hotpink;
-    border-radius: 20%;
+    border-radius: 5%;
     background-color: lightblue;
-    height: 650px;
-    width: 600px;
+    width: 40%;
+    
+    
 }
 .about-me > p {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -114,11 +132,25 @@ button {
     width: 120px;;
     height: 120px;
     background-color:lightblue;
-    font-size: 20px;
+    font-size: 25px;
     margin: 10px;
     font-family:'Baloo Tammudu 2', cursive;;
     font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
     
+}
+
+button:hover {
+    background: lightseagreen;
+    color: crimson;
+
+}
+
+.home-nav-button:hover {
+    background: darkmagenta;
+    color: lightblue;
+
 }
 
 
@@ -161,6 +193,10 @@ p, label {
     background-color: white;
     border: 3px solid black;
     margin: 50px;
+    
+    
+   
+    
 
 
 }
@@ -207,6 +243,16 @@ STYLING THE HOME BUTTON
 .new-asset, .new-asset-2 {
     font-family: 'Baloo Tammudu 2', cursive;
     font-weight: bold;
+
     
+
+}
+
+#financial-data-header, #social-data-header {
+    text-align: center;
+    font-family: 'Baloo Tammudu 2', cursive;
+    font-weight: bold;
+    
+    font-size: 35px;
 
 }
