@@ -25,131 +25,136 @@
             <a href="about.html"><button class="nav-button">About</button></a>
         </nav>
     </header>
-
-    <main class="white-paper">
-        <h1 class="white-paper-header">Velocity White Paper</h1>
-        <h2 class="white-paper-header">Philosophical Motivation</h2>
-        <p>
-            Ever since Satoshi Nakomoto minted the first Bitcoin, there has been incredible controvery surrounding
-            crypto assets. Are they currencies or securities? Are they symbolic of a libertarian future that shakes off
-            the tyrannical chains of Big Banks and totalitarian government regimes, or merely "Rat Poison" (as Warren Buffet
-            famously stated)? This paper is inclined to argue the former; however, the productive capacity of crypto
-            assets are fundamentally limited by the way humans choose to use them. Therefore, as long as the crypto market
-            remains one dominated by booms and busts, crypto assets will never truly be able to offer the degree of stability
-            necessary for people to shake free from the chains of an oppressive financial system. Ultimately, personal
-            liberty is inextricably linked to financial freedom; so ensuring the stability and reliability of crypto assets
-        is paramount to the mainstream adoption of crypto assets and the maximization of their utilization as a tool for 
-    maximizing the agency of the individual      </p>
-        <p></p>
-        <h2 class="white-paper-header">Thesis: The Case for Fundamental Analysis</h2>
-        <p>
-            Fundamental Analysis is the methodical process of analyzing an asset on its underlying essential properties
-            at an atomic level and thereby deducing the soundness of an investment. This methodological mode of thought is in stark contrast to the present
-            realm of crypto investing, which is largely dominated by social media-driven frenzy and "pumping and punting." To truly create
-            a definitive methodology by which one could fundamentally analyze the intrinsic worth of a crypto asset and invest in 
-            this asset for an extended period of time, there must be fundamental benchmarks by which we measure the performance of
-            a crypto system. Naturally, an on-chain analysis of the underlying protocol is a requisite; however, this requires a steadier
-            hand than this application can offer. Instead, this application identifies three fundamental financial indicators for a crypto asset that 
-            may justify it as a long term investment. In addition, three social-media driven metrics are employed to capitalize on 
-            the disconnect between market hysteria and market soundness. In the immortal words of Benjamin Graham, the market is 
-            a popularity contest in the short-term and a weighing contest in the long term. Thus, by identifying assets with fundamentally sound 
-            investment prospects that may be overlooked by media-driven hype, we can determine an optimal long-term investment approach 
-            that is fundamentally contrarian in nature but is mathematically rigorous in nature.
-        </p>
-        <h2 class="white-paper-header">Key Concepts and Data Metrics</h2>
-        <p>Key Social Metrics:</p>
-        <ol>
-            <li>Social Score: The average sum of all posts and interactions with a given asset over some 
-                time interval, <em>T</em>.
-            </li>
-            <ul>
-                <li>Very Bearish Tweet Impact: The average sum of tweets and reactions which are classified as 
-                    very bearish in nature some time interval, <em>T</em>.
-                </li>
-                <li>Bearish Tweet Impact: The average sum of tweets and reactions which are classified as 
-                    bearish in nature.
-                </li>
-                <li>Neutral Tweet Impact: The average sum of tweets and reactions which are classified as 
-                    very bearish in nature some time interval, <em>T</em>.
-                </li>
-                <li>Bullish Tweet Impact: The average sum of tweets and reactions which are classified as 
-                    bullish in nature some time interval, <em>T</em>.
-                </li>
-                <li>Very Bullish Tweet Impact: The average sum of tweets and reactions which are classified as 
-                    very bullish in nature.
-                </li>
-                <li>Redit Post Impact: The average sum of Reddit posts and reactions some time interval, <em>T</em>.
-                </li>
-                <li>Reddit Comments Impact: The average sum of Reddit comments and reactions which are classified as 
-                    very bearish in nature some time interval, <em>T</em>.
-                </li>
-                <li>Url Shares: The average sum of url shares over some time interval, <em>T</em>.
-                </li>
-
-                
-            </ul>
-            <li>Sentiment: the degree to which social media posts represent bearish or bullish sentiment (where 1 represents 
-                very bearish and 5 represent very bullish).
-            </li>
-            <ul>
-                <li>Absolute Sentiment: Percent of bullish or very bullish tweets</li>
-                <li>Relative Sentiment: Percent of tweets that are bullish (excluding neutral tweets) </li>
-                
-                
-            </ul>
-            <li>Galaxy Score: A proprietary score based on technical indicators of price, average social sentiment, relative 
-                social activity , and a factor of how closely social indicators correlate with price and volume.
-            </li>
-            <ul>
-                <li>Correlation Rank: A score based on how the assets social metrics correlate with price and volume</li>
-                <li>Market Dominance: The degree of investment in this asset versus other assets in its class</li>
-                <li>Social Dominance: The degree to which social media posts and reactions regard this asset versus other assets in its class</li>
-            </ul>
-        </ol>
-        <p>Key Financial Metrics</p>
-        <ol>
-            <li>Price to Earnings Ratio: the ratio of the current price level over its earnings over some time interval, <em>T</em></li>
-            <ul>
-                <li>Price: the market value of an asset</li>
-                <li>Earnings: the difference in some price, <em>P</em>, over some time interval <em>T</em></li>
-            </ul>
-            <li>Velocity: equal to the price level of an asset multiplied by the aggregate real value of transactions in a 
-                given time frame divided by the total nominal amount of money in circulation. This is equivalent to the price level 
-                squared multiplied by the transaction volume divided by the market capitalization.
-            </li>
-            <ul>
-                <li>Transaction Volume: the number of transactions multiplied by the price associated with each transaction</li>
-                <li>Market Capitalization: the total amount of USD current invested in the particular asset.</li>
-            </ul>
-            <li>Risk Differential: the difference between an asset's upside risk and downside risk; regarded as a metric 
-                that weighs potential gains against potential losses. A negative value suggests the downside risk is greater 
-                than the upside risk and thus the asset is likely not a reliable investment. A positive value suggests the upside risk is greater
-                than the downside risk and thus the asset is a potentially sound investment
-            </li>
-            <ul>
-                <li>Volatility: the standard deviation of an asset's price</li>
-                <li>Downside Risk: the standard deviation of an asset's losses</li>
-                <li>Upside Risk: the standard deviation of an asset's gains</li>
-            </ul>
-        </ol>
-        <h2>How to use this application</h2>
-        <p>The purpose of velocity is to synthesize data concerning crypto currencies into easily comprehensible metrics to compare 
-            across currencies. Therefore, in order to get the most out of this website, the following methodology is suggested:
+    <div id="white-paper-container">
+        <main class="white-paper">
+            <h1 class="white-paper-header">Velocity White Paper</h1>
+            <h2 class="white-paper-header">Philosophical Motivation</h2>
+            <p>
+                Ever since Satoshi Nakomoto minted the first Bitcoin, there has been incredible controvery surrounding
+                crypto assets. Are they currencies or securities? Are they symbolic of a libertarian future that shakes off
+                the tyrannical chains of Big Banks and totalitarian government regimes, or merely "Rat Poison" (as Warren Buffet
+                famously stated)? This paper is inclined to argue the former; however, the productive capacity of crypto
+                assets are fundamentally limited by the way humans choose to use them. Therefore, as long as the crypto market
+                remains one dominated by booms and busts, crypto assets will never truly be able to offer the degree of stability
+                necessary for people to shake free from the chains of an oppressive financial system. Ultimately, personal
+                liberty is inextricably linked to financial freedom; so ensuring the stability and reliability of crypto assets
+            is paramount to the mainstream adoption of crypto assets and the maximization of their utilization as a tool for 
+        maximizing the agency of the individual      </p>
+            <p></p>
+            <h2 class="white-paper-header">Thesis: The Case for Fundamental Analysis</h2>
+            <p>
+                Fundamental Analysis is the methodical process of analyzing an asset on its underlying essential properties
+                at an atomic level and thereby deducing the soundness of an investment. This methodological mode of thought is in stark contrast to the present
+                realm of crypto investing, which is largely dominated by social media-driven frenzy and "pumping and punting." To truly create
+                a definitive methodology by which one could fundamentally analyze the intrinsic worth of a crypto asset and invest in 
+                this asset for an extended period of time, there must be fundamental benchmarks by which we measure the performance of
+                a crypto system. Naturally, an on-chain analysis of the underlying protocol is a requisite; however, this requires a steadier
+                hand than this application can offer. Instead, this application identifies three fundamental financial indicators for a crypto asset that 
+                may justify it as a long term investment. In addition, three social-media driven metrics are employed to capitalize on 
+                the disconnect between market hysteria and market soundness. In the immortal words of Benjamin Graham, the market is 
+                a popularity contest in the short-term and a weighing contest in the long term. Thus, by identifying assets with fundamentally sound 
+                investment prospects that may be overlooked by media-driven hype, we can determine an optimal long-term investment approach 
+                that is fundamentally contrarian in nature but is mathematically rigorous in nature.
+            </p>
+            <h2 class="white-paper-header">Key Concepts and Data Metrics</h2>
+            <p>Key Social Metrics:</p>
             <ol>
-                <li>Research 20 - 30 crypto currencies. The following sites should be reasonable for starting your search: </li>
+                <li>Social Score: The average sum of all posts and interactions with a given asset over some 
+                    time interval, <em>T</em>.
+                </li>
                 <ul>
-                    <li><a href="https://coinmarketcap.com/all/views/all/">Coin Market Cap</a></li>
-                    <li><a href="https://www.investopedia.com/tech/most-important-cryptocurrencies-other-than-bitcoin/">Most Important Cryptocurrencies, other than Bitcoin </a></li>
+                    <li>Very Bearish Tweet Impact: The average sum of tweets and reactions which are classified as 
+                        very bearish in nature some time interval, <em>T</em>.
+                    </li>
+                    <li>Bearish Tweet Impact: The average sum of tweets and reactions which are classified as 
+                        bearish in nature.
+                    </li>
+                    <li>Neutral Tweet Impact: The average sum of tweets and reactions which are classified as 
+                        very bearish in nature some time interval, <em>T</em>.
+                    </li>
+                    <li>Bullish Tweet Impact: The average sum of tweets and reactions which are classified as 
+                        bullish in nature some time interval, <em>T</em>.
+                    </li>
+                    <li>Very Bullish Tweet Impact: The average sum of tweets and reactions which are classified as 
+                        very bullish in nature.
+                    </li>
+                    <li>Redit Post Impact: The average sum of Reddit posts and reactions some time interval, <em>T</em>.
+                    </li>
+                    <li>Reddit Comments Impact: The average sum of Reddit comments and reactions which are classified as 
+                        very bearish in nature some time interval, <em>T</em>.
+                    </li>
+                    <li>Url Shares: The average sum of url shares over some time interval, <em>T</em>.
+                    </li>
+    
+                    
                 </ul>
-                <li>Read up on our documentation to be sure you understand what each metric is calculating.</li>
-                <li>Plug in these crypto currencies into the search tools to explore which assets represent the most reasonable investments</li>
-                <li>Invest! The following websites make it easy to get started with crypto via an exchange: </li>
+                <li>Sentiment: the degree to which social media posts represent bearish or bullish sentiment (where 1 represents 
+                    very bearish and 5 represent very bullish).
+                </li>
                 <ul>
-                    <li><a href="https://www.binance.com/en">Binance</a></li>
-                    <li><a href="https://www.coinbase.com">Coinbase</a></li>
-                    <li><a href="https://www.gemini.com/">Gemini</a></li>
+                    <li>Absolute Sentiment: Percent of bullish or very bullish tweets</li>
+                    <li>Relative Sentiment: Percent of tweets that are bullish (excluding neutral tweets) </li>
+                    
+                    
                 </ul>
-
+                <li>Galaxy Score: A proprietary score based on technical indicators of price, average social sentiment, relative 
+                    social activity , and a factor of how closely social indicators correlate with price and volume.
+                </li>
+                <ul>
+                    <li>Correlation Rank: A score based on how the assets social metrics correlate with price and volume</li>
+                    <li>Market Dominance: The degree of investment in this asset versus other assets in its class</li>
+                    <li>Social Dominance: The degree to which social media posts and reactions regard this asset versus other assets in its class</li>
+                </ul>
             </ol>
-        </p>
-    </main>
+            <p>Key Financial Metrics</p>
+            <ol>
+                <li>Price to Earnings Ratio: the ratio of the current price level over its earnings over some time interval, <em>T</em></li>
+                <ul>
+                    <li>Price: the market value of an asset</li>
+                    <li>Earnings: the difference in some price, <em>P</em>, over some time interval <em>T</em></li>
+                </ul>
+                <li>Velocity: equal to the price level of an asset multiplied by the aggregate real value of transactions in a 
+                    given time frame divided by the total nominal amount of money in circulation. This is equivalent to the price level 
+                    squared multiplied by the transaction volume divided by the market capitalization.
+                </li>
+                <ul>
+                    <li>Transaction Volume: the number of transactions multiplied by the price associated with each transaction</li>
+                    <li>Market Capitalization: the total amount of USD current invested in the particular asset.</li>
+                </ul>
+                <li>Risk Differential: the difference between an asset's upside risk and downside risk; regarded as a metric 
+                    that weighs potential gains against potential losses. A negative value suggests the downside risk is greater 
+                    than the upside risk and thus the asset is likely not a reliable investment. A positive value suggests the upside risk is greater
+                    than the downside risk and thus the asset is a potentially sound investment
+                </li>
+                <ul>
+                    <li>Volatility: the standard deviation of an asset's price</li>
+                    <li>Downside Risk: the standard deviation of an asset's losses</li>
+                    <li>Upside Risk: the standard deviation of an asset's gains</li>
+                </ul>
+            </ol>
+            <h2 class="white-paper-header">How to use this application</h2>
+            <p>The purpose of velocity is to synthesize data concerning crypto currencies into easily comprehensible metrics to compare 
+                across currencies. Therefore, in order to get the most out of this website, the following methodology is suggested:
+                <ol>
+                    <li>Research 20 - 30 crypto currencies. The following sites should be reasonable for starting your search: </li>
+                    <ul>
+                        <li><a href="https://coinmarketcap.com/all/views/all/">Coin Market Cap</a></li>
+                        <li><a href="https://www.investopedia.com/tech/most-important-cryptocurrencies-other-than-bitcoin/">Most Important Cryptocurrencies, other than Bitcoin </a></li>
+                    </ul>
+                    <li>Read up on our documentation to be sure you understand what each metric is calculating.</li>
+                    <li>Plug in these crypto currencies into the search tools to explore which assets represent the most reasonable investments</li>
+                    <li>Invest! The following websites make it easy to get started with crypto via an exchange: </li>
+                    <ul>
+                        <li><a href="https://www.binance.com/en">Binance</a></li>
+                        <li><a href="https://www.coinbase.com">Coinbase</a></li>
+                        <li><a href="https://www.gemini.com/">Gemini</a></li>
+                    </ul>
+    
+                </ol>
+            </p>
+        </main>
+
+    </div>
+    
+</body>
+

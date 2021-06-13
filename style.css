@@ -192,16 +192,15 @@ p, label {
     font-size: 20px;
     background-color: white;
     border: 3px solid black;
-    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
     
-    
-   
-    
-
 
 }
-.white-paper > p {
-    font-family:'Times New Roman', Times, serif
+.white-paper > p, li {
+    font-family:'Times New Roman', Times, serif;
+    
 }
 .white-paper-header {
     text-align: center;
@@ -255,4 +254,23 @@ STYLING THE HOME BUTTON
     
     font-size: 35px;
 
+}
+
+.white-paper > h2 {
+    text-align: center;
+}
+
+#white-paper-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+#github {
+    height: 100px;
+    width: 100px;
+}
+.about-footer {
+    display: flex;
+    justify-content: center;
 }
