@@ -162,6 +162,10 @@ p, label {
     border: 3px solid black;
     margin: 50px;
 
+
+}
+.white-paper > p {
+    font-family:'Times New Roman', Times, serif
 }
 .white-paper-header {
     text-align: center;
@@ -198,4 +202,11 @@ STYLING THE HOME BUTTON
 }
 .social-header > h1 {
     text-decoration: underline;
+}
+
+.new-asset, .new-asset-2 {
+    font-family: 'Baloo Tammudu 2', cursive;
+    font-weight: bold;
+    
+
 }

@@ -126,7 +126,7 @@ const processData = (sampleData) => {
 
     const velocity = document.createElement('p');
     velocity.innerHTML = `<strong>Velocity: </strong>${
-        (coinData[0].volume_24h * coinData[0].price / coinData[0].market_cap_global).toPrecision(3)
+        (coinData[0].volume_24h * Math.pow(coinData[0].price, 2) / coinData[0].market_cap_global).toPrecision(3)
     }`
     newAsset.appendChild(velocity);
 
@@ -308,7 +308,7 @@ const processDataTwo = (sampleData) => {
 
     const velocity = document.createElement('p');
     velocity.innerHTML = `<strong>Velocity: </strong>${
-        (coinData[0].volume_24h * coinData[0].price / coinData[0].market_cap_global).toPrecision(3)
+        (coinData[0].volume_24h * Math.pow(coinData[0].price, 2) / coinData[0].market_cap_global).toPrecision(3)
     }`
     newAssetTwo.appendChild(velocity);
 

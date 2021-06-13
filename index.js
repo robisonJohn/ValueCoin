@@ -125,41 +125,41 @@ const processData = (sampleData) => {
     //let avgSocialVolume = totalSocialVolume / timeSeries.length;
 
     const volume = document.createElement('p');
-    volume.innerHTML = `<strong>Average Volume of Social Media Posts: </strong> ${totalSocialVolume}`;
+    volume.innerHTML = `<strong>Volume of Social Media Posts: </strong> ${totalSocialVolume}`.toUpperCase();
     newAsset.appendChild(volume);
 
     const volumeChildren = document.createElement('ul');
 
     const tweetImpactOneChild = document.createElement('li');
-    tweetImpactOneChild.innerHTML = `<strong>Average of Very Bearish Tweets + Reactions: </strong>${tweetImpactOne}`;
+    tweetImpactOneChild.innerHTML = `<strong>Very Bearish Tweets + Reactions: </strong>${tweetImpactOne}`.toUpperCase();
     volumeChildren.appendChild(tweetImpactOneChild);
 
     const tweetImpactTwoChild = document.createElement('li');
-    tweetImpactTwoChild.innerHTML = `<strong>Average of Bearish Tweets + Reactions: </strong>${tweetImpactTwo}`;
+    tweetImpactTwoChild.innerHTML = `<strong>Bearish Tweets + Reactions: </strong>${tweetImpactTwo}`.toUpperCase();
     volumeChildren.appendChild(tweetImpactTwoChild);
 
     const tweetImpactThreeChild = document.createElement('li');
-    tweetImpactThreeChild.innerHTML = `<strong>Average of Neutral Tweets + Reactions: </strong>${tweetImpactThree}`;
+    tweetImpactThreeChild.innerHTML = `<strong>Neutral Tweets + Reactions: </strong>${tweetImpactThree}`.toUpperCase();
     volumeChildren.appendChild(tweetImpactThreeChild);
 
     const tweetImpactFourChild = document.createElement('li');
-    tweetImpactFourChild.innerHTML = `<strong>Average of Bullish Tweets + Reactions: </strong>${tweetImpactFour}`;
+    tweetImpactFourChild.innerHTML = `<strong>Bullish Tweets + Reactions: </strong>${tweetImpactFour}`.toUpperCase();
     volumeChildren.appendChild(tweetImpactFourChild);
 
     const tweetImpactFiveChild = document.createElement('li');
-    tweetImpactFiveChild.innerHTML = `<strong>Average of Very Bullish Tweets + Reactions: </strong>${tweetImpactFive}`;
+    tweetImpactFiveChild.innerHTML = `<strong>Very Bullish Tweets + Reactions: </strong>${tweetImpactFive}`.toUpperCase();
     volumeChildren.appendChild(tweetImpactFiveChild);
 
     const redditPostChild = document.createElement('li');
-    redditPostChild.innerHTML = `<strong>Average of Reddit Posts + Reactions: </strong>${redditPosts}`;
+    redditPostChild.innerHTML = `<strong>Reddit Posts + Reactions: </strong>${redditPosts}`.toUpperCase();
     volumeChildren.appendChild(redditPostChild);
 
     const redditCommentChild = document.createElement('li');
-    redditCommentChild.innerHTML = `<strong>Average of Reddit Comments + Reactions: </strong>${redditComments}`;
+    redditCommentChild.innerHTML = `<strong>Reddit Comments + Reactions: </strong>${redditComments}`.toUpperCase();
     volumeChildren.appendChild(redditCommentChild);
 
     const urlShareChild = document.createElement('li');
-    urlShareChild.innerHTML = `<strong>Average of Url Shares: </strong>${urlShares}`;
+    urlShareChild.innerHTML = `<strong>Url Shares: </strong>${urlShares}`.toUpperCase();
     volumeChildren.appendChild(urlShareChild);
 
     newAsset.appendChild(volumeChildren);
@@ -193,17 +193,17 @@ const processData = (sampleData) => {
 
 
     const sentiment = document.createElement('p');
-    sentiment.innerHTML = `<strong>Average Sentiment: </strong>${avgSentiment.toPrecision(3)}`;
+    sentiment.innerHTML = `<strong>Sentiment: </strong>${avgSentiment.toPrecision(3)}`.toUpperCase();
     newAsset.appendChild(sentiment);
 
     const sentimentChildren = document.createElement('ul');
 
     const relativeSentiment = document.createElement('li');
-    relativeSentiment.innerHTML = `<strong>Relative Sentiment: </strong> ${relSentiment.toPrecision(3)}%`;
+    relativeSentiment.innerHTML = `<strong>Relative Sentiment: </strong> ${relSentiment.toPrecision(3)}%`.toUpperCase();
     sentimentChildren.appendChild(relativeSentiment);
 
     const absoluteSentiment = document.createElement('li');
-    absoluteSentiment.innerHTML = `<strong>Absolute Sentiment: </strong> ${absSentiment.toPrecision(3)}%`;
+    absoluteSentiment.innerHTML = `<strong>Absolute Sentiment: </strong> ${absSentiment.toPrecision(3)}%`.toUpperCase();
     sentimentChildren.appendChild(absoluteSentiment);
 
     newAsset.appendChild(sentimentChildren);
@@ -243,21 +243,21 @@ const processData = (sampleData) => {
     socialDominance = socialDominance / timeSeries.length;
 
     const galaxy = document.createElement('p');
-    galaxy.innerHTML = `<strong>Galaxy Score: </strong> ${galaxyScore}`;
+    galaxy.innerHTML = `<strong>Galaxy Score: </strong> ${galaxyScore}`.toUpperCase();
     newAsset.appendChild(galaxy);
 
     const correlationChildren = document.createElement('ul');
 
     const corrScore = document.createElement('li');
-    corrScore.innerHTML = `<strong>Correlation Rank: </strong> ${correlationScore.toPrecision(3)}`;
+    corrScore.innerHTML = `<strong>Correlation Rank: </strong> ${correlationScore.toPrecision(3)}`.toUpperCase();
     correlationChildren.appendChild(corrScore);
 
     const marketDom = document.createElement('li');
-    marketDom.innerHTML = `<strong>Market Dominance: </strong> ${marketDominance.toPrecision(3)}`
+    marketDom.innerHTML = `<strong>Market Dominance: </strong> ${marketDominance.toPrecision(3)}`.toUpperCase();
     correlationChildren.appendChild(marketDom);
 
     const socialDom = document.createElement('li');
-    socialDom.innerHTML = `<strong>Social Dominance: </strong> ${socialDominance.toPrecision(3)}`
+    socialDom.innerHTML = `<strong>Social Dominance: </strong> ${socialDominance.toPrecision(3)}`.toUpperCase();
     correlationChildren.appendChild(socialDom);
 
     newAsset.append(correlationChildren);
@@ -390,41 +390,41 @@ const processDataTwo = (sampleData) => {
     //let avgSocialVolume = totalSocialVolume / timeSeries.length;
 
     const volume = document.createElement('p');
-    volume.innerHTML = `<strong>Average Volume of Social Media Posts: </strong> ${totalSocialVolume}`;
+    volume.innerHTML = `<strong>Volume of Social Media Posts: </strong> ${totalSocialVolume}`.toUpperCase();
     newAssetTwo.appendChild(volume);
 
     const volumeChildren = document.createElement('ul');
 
     const tweetImpactOneChild = document.createElement('li');
-    tweetImpactOneChild.innerHTML = `<strong>Average of Very Bearish Tweets + Reactions: </strong>${tweetImpactOne}`;
+    tweetImpactOneChild.innerHTML = `<strong>Very Bearish Tweets + Reactions: </strong>${tweetImpactOne}`.toUpperCase();
     volumeChildren.appendChild(tweetImpactOneChild);
 
     const tweetImpactTwoChild = document.createElement('li');
-    tweetImpactTwoChild.innerHTML = `<strong>Average of Bearish Tweets + Reactions: </strong>${tweetImpactTwo}`;
+    tweetImpactTwoChild.innerHTML = `<strong>Bearish Tweets + Reactions: </strong>${tweetImpactTwo}`.toUpperCase();
     volumeChildren.appendChild(tweetImpactTwoChild);
 
     const tweetImpactThreeChild = document.createElement('li');
-    tweetImpactThreeChild.innerHTML = `<strong>Average of Neutral Tweets + Reactions: </strong>${tweetImpactThree}`;
+    tweetImpactThreeChild.innerHTML = `<strong>Neutral Tweets + Reactions: </strong>${tweetImpactThree}`.toUpperCase();
     volumeChildren.appendChild(tweetImpactThreeChild);
 
     const tweetImpactFourChild = document.createElement('li');
-    tweetImpactFourChild.innerHTML = `<strong>Average of Bullish Tweets + Reactions: </strong>${tweetImpactFour}`;
+    tweetImpactFourChild.innerHTML = `<strong>Bullish Tweets + Reactions: </strong>${tweetImpactFour}`.toUpperCase();
     volumeChildren.appendChild(tweetImpactFourChild);
 
     const tweetImpactFiveChild = document.createElement('li');
-    tweetImpactFiveChild.innerHTML = `<strong>Average of Very Bearish Tweets + Reactions: </strong>${tweetImpactFive}`;
+    tweetImpactFiveChild.innerHTML = `<strong>Very Bullish Tweets + Reactions: </strong>${tweetImpactFive}`.toUpperCase();
     volumeChildren.appendChild(tweetImpactFiveChild);
 
     const redditPostChild = document.createElement('li');
-    redditPostChild.innerHTML = `<strong>Average of Reddit Posts + Reactions: </strong>${redditPosts}`;
+    redditPostChild.innerHTML = `<strong>Reddit Posts + Reactions: </strong>${redditPosts}`.toUpperCase();
     volumeChildren.appendChild(redditPostChild);
 
     const redditCommentChild = document.createElement('li');
-    redditCommentChild.innerHTML = `<strong>Average of Reddit Comments + Reactions: </strong>${redditComments}`;
+    redditCommentChild.innerHTML = `<strong>Reddit Comments + Reactions: </strong>${redditComments}`.toUpperCase();
     volumeChildren.appendChild(redditCommentChild);
 
     const urlShareChild = document.createElement('li');
-    urlShareChild.innerHTML = `<strong>Average of Url Shares: </strong>${urlShares}`;
+    urlShareChild.innerHTML = `<strong>Url Shares: </strong>${urlShares}`.toUpperCase();
     volumeChildren.appendChild(urlShareChild);
 
     newAssetTwo.appendChild(volumeChildren);
@@ -458,17 +458,17 @@ const processDataTwo = (sampleData) => {
 
 
     const sentiment = document.createElement('p');
-    sentiment.innerHTML = `<strong>Average Sentiment: </strong>${avgSentiment.toPrecision(3)}`;
+    sentiment.innerHTML = `<strong>Sentiment: </strong>${avgSentiment.toPrecision(3)}`.toUpperCase();
     newAssetTwo.appendChild(sentiment);
 
     const sentimentChildren = document.createElement('ul');
 
     const relativeSentiment = document.createElement('li');
-    relativeSentiment.innerHTML = `<strong>Relative Sentiment: </strong> ${relSentiment.toPrecision(3)}%`;
+    relativeSentiment.innerHTML = `<strong>Relative Sentiment: </strong> ${relSentiment.toPrecision(3)}%`.toUpperCase();
     sentimentChildren.appendChild(relativeSentiment);
 
     const absoluteSentiment = document.createElement('li');
-    absoluteSentiment.innerHTML = `<strong>Absolute Sentiment: </strong> ${absSentiment.toPrecision(3)}%`;
+    absoluteSentiment.innerHTML = `<strong>Absolute Sentiment: </strong> ${absSentiment.toPrecision(3)}%`.toUpperCase();
     sentimentChildren.appendChild(absoluteSentiment);
 
     newAssetTwo.appendChild(sentimentChildren);
@@ -508,21 +508,21 @@ const processDataTwo = (sampleData) => {
     socialDominance = socialDominance / timeSeries.length;
 
     const galaxy = document.createElement('p');
-    galaxy.innerHTML = `<strong>Galaxy Score: </strong> ${galaxyScore}`;
+    galaxy.innerHTML = `<strong>Galaxy Score: </strong> ${galaxyScore}`.toUpperCase();
     newAssetTwo.appendChild(galaxy);
 
     const correlationChildren = document.createElement('ul');
 
     const corrScore = document.createElement('li');
-    corrScore.innerHTML = `<strong>Correlation Rank: </strong> ${correlationScore.toPrecision(3)}`;
+    corrScore.innerHTML = `<strong>Correlation Rank: </strong> ${correlationScore.toPrecision(3)}`.toUpperCase();
     correlationChildren.appendChild(corrScore);
 
     const marketDom = document.createElement('li');
-    marketDom.innerHTML = `<strong>Market Dominance: </strong> ${marketDominance.toPrecision(3)}`
+    marketDom.innerHTML = `<strong>Market Dominance: </strong> ${marketDominance.toPrecision(3)}`.toUpperCase();
     correlationChildren.appendChild(marketDom);
 
     const socialDom = document.createElement('li');
-    socialDom.innerHTML = `<strong>Social Dominance: </strong> ${socialDominance.toPrecision(3)}`
+    socialDom.innerHTML = `<strong>Social Dominance: </strong> ${socialDominance.toPrecision(3)}`.toUpperCase();
     correlationChildren.appendChild(socialDom);
 
     newAssetTwo.append(correlationChildren);
