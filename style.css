@@ -13,6 +13,15 @@ nav {
     flex-direction: row;
     
 }
+
+.new-asset, .new-asset-2 {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+
+
 img {
     height: 300px;
     width: 500px;
@@ -242,13 +251,7 @@ STYLING THE HOME BUTTON
     text-decoration: underline;
 }
 
-.new-asset, .new-asset-2 {
-    font-family: 'Baloo Tammudu 2', cursive;
-    font-weight: bold;
 
-    
-
-}
 
 #financial-data-header, #social-data-header {
     text-align: center;
@@ -277,3 +280,4 @@ STYLING THE HOME BUTTON
     display: flex;
     justify-content: center;
 }
+

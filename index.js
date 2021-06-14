@@ -247,6 +247,7 @@ const processData = (sampleData) => {
     newAsset.appendChild(galaxy);
 
     const correlationChildren = document.createElement('ul');
+    correlationChildren.className = 'social-list'
 
     const corrScore = document.createElement('li');
     corrScore.innerHTML = `<strong>Correlation Rank: </strong> ${correlationScore.toPrecision(3)}`.toUpperCase();
